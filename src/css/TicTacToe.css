@@ -1,0 +1,82 @@
+body{
+    color: #fff;
+    transition: background 0.5s;
+}
+body.background-blue{
+    background: #3498db
+}
+body.background-red{
+    background: #e74c3c;
+}
+
+.game-board{
+    margin: 0 auto;
+    text-align: center;
+    width: 75vmin;
+}
+
+.game-board .grid{
+    display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    height: 75vmin;
+    position: relative;
+    width: 75vmin;
+}
+
+
+.game-board .grid:after{
+    content: '';
+    display: block;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s;
+    width: 0;
+}
+.game-board .grid.has-winning-line:after{
+    border: 3px solid #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.25);
+    width: 90%;
+}
+.game-board .grid.winning-line-1:after{
+    top: 16.6667%;
+}
+.game-board .grid.winning-line-2:after{
+    top: 50%;
+}
+.game-board .grid.winning-line-3:after{
+    top: 83.333%;
+}
+.game-board .grid.winning-line-4:after{
+    left: 16.6667%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.game-board .grid.winning-line-5:after{
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.game-board .grid.winning-line-6:after{
+    left: 83.333%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.game-board .grid.winning-line-7:after{
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 127.2782%; /* result of hypotenuse * 90% */
+}
+.game-board .grid.winning-line-8:after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 127.2782%; /* result of hypotenuse * 90% */
+}
+
+.game-board strong{
+    display: block;
+    font-size: 2em;
+    margin: 1em 0;
+}

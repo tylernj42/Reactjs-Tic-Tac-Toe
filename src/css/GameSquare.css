@@ -1,0 +1,38 @@
+.game-square{
+    border: 2px solid #fff;
+    height: 33.3333%;
+    width: 33.3333%;
+}
+.game-square:nth-child(-n+3){
+    border-top: none;
+}
+.game-square:nth-of-type(3n){
+    border-right: none;
+}
+.game-square:nth-of-type(3n+1){
+    border-left: none;
+}
+.game-square:nth-last-child(-n+3){
+    border-bottom: none;
+}
+.game-square button,
+.game-square button[disabled]{
+    background: none;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 12.5vmin;
+    height: 100%;
+    width: 100%;
+}
+
+.game-square button.empty{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.player-x-turn:not(.game-over) .game-square button.empty:hover:before{
+    content: 'X'
+}
+.player-o-turn:not(.game-over) .game-square button.empty:hover:before{
+    content: 'O'
+}
