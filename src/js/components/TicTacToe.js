@@ -99,6 +99,8 @@ export default class TicTacToe extends React.Component{
 
     resetGame(){
         this.setState(this.initialState);
+        document.querySelector('body').classList.remove('background-blue');
+        document.querySelector('body').classList.add('background-red');
     }
 
     render(){
@@ -112,12 +114,6 @@ export default class TicTacToe extends React.Component{
             message = `It's a Draw!`;
         }
 
-        /* Render reset button if game is over */
-        let resetButton = '';
-        if(this.state.gameOver){
-            resetButton = <button className="btn btn-white" onClick={() => this.resetGame()}>New Game</button>;
-        }
-
         return(
             <div className={this.getBoardClasses()}>
                 <strong>{message}</strong>
@@ -128,7 +124,11 @@ export default class TicTacToe extends React.Component{
                                     disabled={this.state.squares[i] !== null || this.state.winner !== null} />
                     )}
                 </div>
-                {resetButton}
+                <button className="btn btn-white" 
+                        onClick={() => this.resetGame()}
+                        disabled={!this.state.gameOver}>
+                    New Game
+                </button>
             </div>
         );
     }

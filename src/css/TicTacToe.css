@@ -9,10 +9,17 @@ body.background-red{
     background: #e74c3c;
 }
 
+.game-board .btn.btn-white{
+    margin-top: 3rem;
+}
+.game-board .btn.btn-white:disabled{
+    cursor: default;
+    opacity: 0;
+}
 .game-board{
     margin: 0 auto;
     text-align: center;
-    width: 75vmin;
+    width: 60vmin;
 }
 
 .game-board .grid{
@@ -22,9 +29,9 @@ body.background-red{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-    height: 75vmin;
+    height: 60vmin;
     position: relative;
-    width: 75vmin;
+    width: 60vmin;
 }
 
 
@@ -77,6 +84,7 @@ body.background-red{
 
 .game-board strong{
     display: block;
+    line-height: 1em;
     font-size: 2em;
-    margin: 1em 0;
+    margin: 1em 0 3rem 0;
 }
