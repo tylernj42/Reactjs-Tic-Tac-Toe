@@ -50,8 +50,8 @@ export default class TicTacToe extends React.Component{
                 this.state.squares[a] === this.state.squares[b] && 
                 this.state.squares[a] === this.state.squares[c]
             ){
-                this.setState({
-                    winner: this.state.currentPlayer,
+                this.setState(prevState => {
+                    winner: prevState.currentPlayer,
                     winningLine: i+1,
                     gameOver: true
                 });
@@ -71,7 +71,7 @@ export default class TicTacToe extends React.Component{
         }
 
         /* Change Turns */
-        this.setState({ currentPlayer: this.state.currentPlayer === 'X' ? 'O' : 'X' });
+        this.setState(prevState => { currentPlayer: prevState.currentPlayer === 'X' ? 'O' : 'X' });
         if(this.state.currentPlayer === 'X'){
             document.querySelector('body').classList.remove('background-red');
             document.querySelector('body').classList.add('background-blue');
