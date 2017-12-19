@@ -51,9 +51,11 @@ export default class TicTacToe extends React.Component{
                 this.state.squares[a] === this.state.squares[c]
             ){
                 this.setState(prevState => {
-                    winner: prevState.currentPlayer,
-                    winningLine: i+1,
-                    gameOver: true
+                    return {
+                        winner: prevState.currentPlayer,
+                        winningLine: i+1,
+                        gameOver: true
+                    }
                 });
                 return;
             }
